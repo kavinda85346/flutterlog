@@ -49,27 +49,46 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Login')),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: _usernameController,
-              decoration: InputDecoration(labelText: 'Username'),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Login'),
+          backgroundColor: Color(0xFF9932CC), // Change app bar title color
+        ),
+        body: Container(
+          color: Color(0xFFD3D3D3), // Set page background to grey
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisAlignment:
+                    MainAxisAlignment.center, // Center content vertically
+                crossAxisAlignment:
+                    CrossAxisAlignment.center, // Center content horizontally
+                children: [
+                  TextField(
+                    controller: _usernameController,
+                    decoration: InputDecoration(labelText: 'Username'),
+                  ),
+                  TextField(
+                    controller: _passwordController,
+                    decoration: InputDecoration(labelText: 'Password'),
+                    obscureText: true,
+                  ),
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: _login,
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.all(6), // Increase button padding
+                      backgroundColor: Color(0xFF9932CC), // Change button color
+                    ),
+                    child: Text('Login'),
+                  ),
+                ],
+              ),
             ),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
-              obscureText: true,
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _login,
-              child: Text('Login'),
-            ),
-          ],
+          ),
         ),
       ),
     );

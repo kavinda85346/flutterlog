@@ -14,7 +14,10 @@ class UserDataScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Saved User Data'),
+        backgroundColor: Color(0xFF9932CC),
       ),
+      backgroundColor:
+          Color(0xFFD3D3D3), // Set the background color to light grey
       body: FutureBuilder<List<Map<String, dynamic>>>(
         future: _getUserData(),
         builder: (context, snapshot) {
