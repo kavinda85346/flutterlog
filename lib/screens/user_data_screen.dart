@@ -33,9 +33,13 @@ class UserDataScreen extends StatelessWidget {
                     subtitle: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Text('User Code: ${user['user_code']}'),
                         Text('Email: ${user['email']}'),
-                        Text('Employee Code: ${user['user_employee_code']}'),
+                        Text(
+                            'User Employee Code: ${user['user_employee_code']}'),
                         Text('Company Code: ${user['company_code']}'),
+                        Text('User Locations: ${user['user_locations']}'),
+                        Text('User Permissions: ${user['user_permissions']}')
                       ],
                     ),
                   ),

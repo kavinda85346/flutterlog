@@ -20,7 +20,7 @@ class DatabaseHelper {
   Future<Database> _initDatabase() async {
     final path = await getDatabasesPath();
     final dbPath = join(path, 'app_data.db');
-
+    print('Database Path: $dbPath'); // Log the database path
     return openDatabase(
       dbPath,
       version: 1,
